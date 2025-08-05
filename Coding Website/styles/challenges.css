@@ -1,0 +1,454 @@
+/* Challenges CSS for CodeFun Website */
+
+/* Challenge Header */
+.challenge-header {
+    padding: 150px 0 50px;
+    background: linear-gradient(135deg, #111, #222);
+    color: white;
+    text-align: center;
+}
+
+.challenge-header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.challenge-meta {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.challenge-meta > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.difficulty {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.beginner {
+    background-color: #0a2e4a;
+    color: #4db8ff;
+}
+
+.intermediate {
+    background-color: #2e2a0a;
+    color: #ffcc44;
+}
+
+.advanced {
+    background-color: #2e0a0a;
+    color: #ff6b6b;
+}
+
+.challenge-description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Challenge Content */
+.challenge-content {
+    padding: 50px 0;
+    background-color: #000;
+}
+
+/* Challenge Tabs */
+.challenge-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 12px 25px;
+    background-color: #222;
+    border: 2px solid #444;
+    border-radius: 30px;
+    font-weight: 600;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    border-color: #4776E6;
+    color: #4776E6;
+}
+
+.tab-button.active {
+    background-color: #4776E6;
+    border-color: #4776E6;
+    color: white;
+}
+
+/* Tab Content */
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Puzzle Description */
+.puzzle-description {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+}
+
+.puzzle-description h2 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.puzzle-description p {
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.instructions, .hints {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.instructions {
+    background-color: #1a1a2e;
+    border-left: 4px solid #4776E6;
+}
+
+.hints {
+    background-color: #2a1a0a;
+    border-left: 4px solid #ffaa00;
+}
+
+.instructions h3, .hints h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.instructions ol, .hints ul {
+    padding-left: 20px;
+}
+
+.instructions li, .hints li {
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+code {
+    background-color: #333;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+    color: #ff69b4;
+}
+
+/* Code Editor */
+.code-editor {
+    background-color: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+    margin-bottom: 30px;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #2d2d2d;
+    color: white;
+}
+
+.editor-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.editor-actions button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+}
+
+.reset-code {
+    background-color: #6c757d;
+    color: white;
+}
+
+.reset-code:hover {
+    background-color: #5a6268;
+}
+
+.run-code {
+    background-color: #28a745;
+    color: white;
+}
+
+.run-code:hover {
+    background-color: #218838;
+}
+
+.editor-container {
+    position: relative;
+    height: 300px;
+}
+
+.code-input {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #fff;
+    border: none;
+    resize: none;
+    background-color: #1e1e1e;
+}
+
+.code-input:focus {
+    outline: none;
+}
+
+.output-container {
+    border-top: 1px solid #333;
+}
+
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #222;
+}
+
+.clear-output {
+    background: none;
+    border: none;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.clear-output:hover {
+    color: #fff;
+}
+
+.output-display {
+    padding: 15px;
+    min-height: 100px;
+    max-height: 200px;
+    overflow-y: auto;
+    font-family: monospace;
+    white-space: pre-wrap;
+    color: #fff;
+    background-color: #1e1e1e;
+}
+
+.output-display.error {
+    color: #dc3545;
+}
+
+/* Test Results */
+.test-results {
+    border-top: 1px solid #333;
+}
+
+.test-header {
+    padding: 10px 20px;
+    background-color: #222;
+    color: #fff;
+}
+
+.test-output {
+    padding: 15px;
+    min-height: 50px;
+    max-height: 150px;
+    overflow-y: auto;
+    font-family: monospace;
+    white-space: pre-wrap;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+.test-case {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.test-pass {
+    background-color: #0a2e0a;
+    color: #6dff72;
+    border-left: 4px solid #28a745;
+}
+
+.test-fail {
+    background-color: #2e0a0a;
+    color: #ff6b6b;
+    border-left: 4px solid #dc3545;
+}
+
+/* Challenge Navigation */
+.challenge-navigation {
+    padding: 50px 0;
+    background-color: #111;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Completed Badge */
+.completed-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Congratulations Modal */
+.congrats-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.congrats-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.congrats-content {
+    background-color: #111;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.congrats-modal.show .congrats-content {
+    transform: translateY(0);
+}
+
+.congrats-content h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.congrats-content p {
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.points {
+    font-weight: 700;
+    color: #4776E6;
+}
+
+.close-modal {
+    margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .challenge-meta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .challenge-tabs {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        width: 100%;
+    }
+    
+    .nav-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-buttons .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .challenge-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .challenge-description {
+        font-size: 1rem;
+    }
+    
+    .puzzle-description,
+    .code-editor {
+        padding: 20px;
+    }
+    
+    .editor-container {
+        height: 250px;
+    }
+}
