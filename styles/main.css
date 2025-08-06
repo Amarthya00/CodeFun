@@ -1,0 +1,583 @@
+@@ .. @@
+/* Theme Variables */
+:root {
+-    /* Vibrant, playful theme */
+-    --bg-color: #fffbe7;
+-    --text-color: #222;
+-    --header-bg: rgba(255, 255, 255, 0.95);
+-    --header-shadow: 0 2px 15px rgba(255, 183, 77, 0.15);
+-    --card-bg: #fff;
+-    --card-shadow: 0 5px 20px rgba(255, 183, 77, 0.15);
+-    --border-color: #ffe082;
+-    --accent-color-1: #ff5e62;   /* Vibrant Red/Coral */
+-    --accent-color-2: #ff9966;   /* Orange */
+-    --accent-color-3: #f9d423;   /* Yellow */
+-    --accent-color-4: #43e97b;   /* Green */
+-    --accent-color-5: #38f9d7;   /* Aqua */
+-    --accent-color-6: #4facfe;   /* Blue */
+-    --accent-color-7: #6a82fb;   /* Purple */
+-    --accent-glow: 0 0 10px rgba(255, 183, 77, 0.3);
+-    --gradient: linear-gradient(90deg, #ff5e62, #ff9966, #f9d423, #43e97b, #38f9d7, #4facfe, #6a82fb);
++    /* Super Fun Gaming Theme */
++    --bg-color: #0a0a0f;
++    --text-color: #ffffff;
++    --header-bg: rgba(10, 10, 15, 0.95);
++    --header-shadow: 0 2px 20px rgba(255, 0, 150, 0.3);
++    --card-bg: linear-gradient(145deg, #1a1a2e, #16213e);
++    --card-shadow: 0 8px 32px rgba(255, 0, 150, 0.2);
++    --border-color: #ff0080;
++    --accent-color-1: #ff0080;   /* Hot Pink */
++    --accent-color-2: #00ff80;   /* Neon Green */
++    --accent-color-3: #8000ff;   /* Electric Purple */
++    --accent-color-4: #ff8000;   /* Neon Orange */
++    --accent-color-5: #00ffff;   /* Cyan */
++    --accent-color-6: #ffff00;   /* Electric Yellow */
++    --accent-color-7: #ff4080;   /* Pink */
++    --accent-glow: 0 0 20px rgba(255, 0, 128, 0.6);
++    --gradient: linear-gradient(45deg, #ff0080, #00ff80, #8000ff, #ff8000, #00ffff);
++    --neon-glow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+ }
+ 
+ /* Light Theme Variables */
+ body.light-theme {
+-    --bg-color: #fffbe7;
+-    --text-color: #222;
+-    --header-bg: rgba(255, 255, 255, 0.95);
+-    --header-shadow: 0 2px 15px rgba(255, 183, 77, 0.15);
+-    --card-bg: #fff;
+-    --card-shadow: 0 5px 20px rgba(255, 183, 77, 0.15);
+-    --border-color: #ffe082;
+-    --accent-color-1: #ff5e62;
+-    --accent-color-2: #ff9966;
+-    --accent-color-3: #f9d423;
+-    --accent-color-4: #43e97b;
+-    --accent-color-5: #38f9d7;
+-    --accent-color-6: #4facfe;
+-    --accent-color-7: #6a82fb;
+-    --accent-glow: 0 0 10px rgba(255, 183, 77, 0.3);
+-    --gradient: linear-gradient(90deg, #ff5e62, #ff9966, #f9d423, #43e97b, #38f9d7, #4facfe, #6a82fb);
++    --bg-color: #f0f8ff;
++    --text-color: #1a1a2e;
++    --header-bg: rgba(240, 248, 255, 0.95);
++    --header-shadow: 0 2px 20px rgba(255, 0, 150, 0.2);
++    --card-bg: linear-gradient(145deg, #ffffff, #f0f8ff);
++    --card-shadow: 0 8px 32px rgba(255, 0, 150, 0.15);
++    --border-color: #ff0080;
++    --accent-color-1: #ff0080;
++    --accent-color-2: #00ff80;
++    --accent-color-3: #8000ff;
++    --accent-color-4: #ff8000;
++    --accent-color-5: #00ffff;
++    --accent-color-6: #ffff00;
++    --accent-color-7: #ff4080;
++    --accent-glow: 0 0 15px rgba(255, 0, 128, 0.4);
++    --gradient: linear-gradient(45deg, #ff0080, #00ff80, #8000ff, #ff8000, #00ffff);
++    --neon-glow: 0 0 3px currentColor, 0 0 6px currentColor, 0 0 9px currentColor;
+ }
+ 
+-/* Update body background for more color and fun shapes */
++/* Gaming Background with Animated Particles */
+ body {
+     background: var(--bg-color);
+-    background-image:
+-        radial-gradient(circle at 10% 20%, #ff9966 0%, transparent 60%),
+-        radial-gradient(circle at 90% 80%, #43e97b 0%, transparent 60%),
+-        radial-gradient(circle at 50% 50%, #f9d423 0%, transparent 70%),
+-        radial-gradient(circle at 80% 10%, #4facfe 0%, transparent 60%);
+     color: var(--text-color);
++    position: relative;
++    overflow-x: hidden;
++}
++
++/* Animated Gaming Background */
++body::before {
++    content: '';
++    position: fixed;
++    top: 0;
++    left: 0;
++    width: 100%;
++    height: 100%;
++    background: 
++        radial-gradient(circle at 20% 80%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
++        radial-gradient(circle at 80% 20%, rgba(0, 255, 128, 0.1) 0%, transparent 50%),
++        radial-gradient(circle at 40% 40%, rgba(128, 0, 255, 0.1) 0%, transparent 50%);
++    animation: backgroundPulse 8s ease-in-out infinite alternate;
++    z-index: -2;
++}
++
++@keyframes backgroundPulse {
++    0% { opacity: 0.3; transform: scale(1); }
++    100% { opacity: 0.6; transform: scale(1.1); }
++}
++
++/* Gaming Grid Pattern */
++body::after {
++    content: '';
++    position: fixed;
++    top: 0;
++    left: 0;
++    width: 100%;
++    height: 100%;
++    background-image: 
++        linear-gradient(rgba(255, 0, 128, 0.03) 1px, transparent 1px),
++        linear-gradient(90deg, rgba(255, 0, 128, 0.03) 1px, transparent 1px);
++    background-size: 50px 50px;
++    animation: gridMove 20s linear infinite;
++    z-index: -1;
++}
++
++@keyframes gridMove {
++    0% { transform: translate(0, 0); }
++    100% { transform: translate(50px, 50px); }
+ }
+ 
+-/* Update section backgrounds for vibrancy */
++/* Gaming Section Backgrounds */
+ .main-sections,
+ .challenges,
+ .how-it-works,
+ .about {
+-    background: linear-gradient(135deg, #fffbe7 60%, #f9d423 100%);
++    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
++    backdrop-filter: blur(10px);
++    border-top: 1px solid rgba(255, 0, 128, 0.2);
++    border-bottom: 1px solid rgba(255, 0, 128, 0.2);
++    position: relative;
++}
++
++.main-sections::before,
++.challenges::before,
++.how-it-works::before,
++.about::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    right: 0;
++    bottom: 0;
++    background: var(--gradient);
++    opacity: 0.05;
++    z-index: -1;
+ }
+ 
+ .cta-section {
+     background: var(--gradient);
+     color: #fff;
++    position: relative;
++    overflow: hidden;
++}
++
++.cta-section::before {
++    content: '';
++    position: absolute;
++    top: -50%;
++    left: -50%;
++    width: 200%;
++    height: 200%;
++    background: repeating-linear-gradient(
++        45deg,
++        transparent,
++        transparent 2px,
++        rgba(255, 255, 255, 0.03) 2px,
++        rgba(255, 255, 255, 0.03) 4px
++    );
++    animation: diagonalMove 10s linear infinite;
++    z-index: 0;
++}
++
++@keyframes diagonalMove {
++    0% { transform: translate(-50%, -50%) rotate(0deg); }
++    100% { transform: translate(-50%, -50%) rotate(360deg); }
+ }
+ 
+ footer {
+-    background: linear-gradient(90deg, #ff9966 0%, #6a82fb 100%);
++    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+     color: #fff;
++    border-top: 2px solid var(--accent-color-1);
++    position: relative;
++}
++
++footer::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    right: 0;
++    height: 2px;
++    background: var(--gradient);
++    animation: borderGlow 3s ease-in-out infinite alternate;
++}
++
++@keyframes borderGlow {
++    0% { box-shadow: 0 0 5px var(--accent-color-1); }
++    100% { box-shadow: 0 0 20px var(--accent-color-1), 0 0 30px var(--accent-color-2); }
+ }
+ 
+-/* Make buttons more colorful */
++/* Gaming Buttons with Neon Effects */
+ .btn-primary {
+     background: var(--gradient);
+     color: #fff;
+-    border: none;
+-    box-shadow: 0 4px 15px rgba(255, 183, 77, 0.2);
++    border: 2px solid var(--accent-color-1);
++    box-shadow: var(--accent-glow);
++    text-transform: uppercase;
++    font-weight: 700;
++    letter-spacing: 2px;
++    position: relative;
++    overflow: hidden;
++}
++
++.btn-primary::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: -100%;
++    width: 100%;
++    height: 100%;
++    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
++    transition: left 0.5s ease;
+ }
+ 
+ .btn-primary:hover {
+-    background: linear-gradient(90deg, #ff9966, #f9d423, #43e97b, #4facfe);
++    background: var(--gradient);
+     color: #fff;
++    box-shadow: var(--neon-glow), var(--accent-glow);
++    transform: translateY(-3px) scale(1.05);
++    animation: buttonPulse 0.6s ease-in-out infinite alternate;
++}
++
++.btn-primary:hover::before {
++    left: 100%;
++}
++
++@keyframes buttonPulse {
++    0% { box-shadow: var(--neon-glow), 0 5px 15px rgba(255, 0, 128, 0.4); }
++    100% { box-shadow: var(--neon-glow), 0 8px 25px rgba(255, 0, 128, 0.6); }
+ }
+ 
+ .btn-secondary {
+-    background: #fff;
+-    color: #ff5e62;
+-    border: 2px solid #ff5e62;
++    background: transparent;
++    color: var(--accent-color-2);
++    border: 2px solid var(--accent-color-2);
++    text-transform: uppercase;
++    font-weight: 700;
++    letter-spacing: 2px;
++    position: relative;
++    overflow: hidden;
++}
++
++.btn-secondary::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    width: 0;
++    height: 100%;
++    background: var(--accent-color-2);
++    transition: width 0.3s ease;
++    z-index: -1;
+ }
+ 
+ .btn-secondary:hover {
+-    background: #ff5e62;
++    color: #000;
++    border-color: var(--accent-color-2);
++    box-shadow: 0 0 20px var(--accent-color-2);
++    transform: translateY(-3px) scale(1.05);
++}
++
++.btn-secondary:hover::before {
++    width: 100%;
++}
++
++/* Gaming Cards with Holographic Effect */
++.section-button,
++.challenge-card,
++.feature {
++    background: var(--card-bg);
++    border: 2px solid var(--accent-color-1);
++    border-radius: 15px;
++    position: relative;
++    overflow: hidden;
++}
++
++.section-button::before,
++.challenge-card::before,
++.feature::before {
++    content: '';
++    position: absolute;
++    top: -2px;
++    left: -2px;
++    right: -2px;
++    bottom: -2px;
++    background: var(--gradient);
++    border-radius: 15px;
++    z-index: -1;
++    opacity: 0;
++    transition: opacity 0.3s ease;
++}
++
++.section-button:hover::before,
++.challenge-card:hover::before,
++.feature:hover::before {
++    opacity: 1;
++    animation: borderRotate 2s linear infinite;
++}
++
++@keyframes borderRotate {
++    0% { transform: rotate(0deg); }
++    100% { transform: rotate(360deg); }
++}
++
++.section-button::after,
++.challenge-card::after,
++.feature::after {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: -100%;
++    width: 100%;
++    height: 100%;
++    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
++    transition: left 0.6s ease;
++}
++
++.section-button:hover::after,
++.challenge-card:hover::after,
++.feature:hover::after {
++    left: 100%;
++}
++
++/* Gaming Icons with Glow */
++.section-icon,
++.achievement-icon,
++.level-badge {
++    background: var(--gradient);
++    box-shadow: var(--accent-glow);
++    position: relative;
++}
++
++.section-icon::before,
++.achievement-icon::before {
++    content: '';
++    position: absolute;
++    top: -5px;
++    left: -5px;
++    right: -5px;
++    bottom: -5px;
++    background: var(--gradient);
++    border-radius: 50%;
++    z-index: -1;
++    opacity: 0;
++    filter: blur(10px);
++    transition: opacity 0.3s ease;
++}
++
++.section-button:hover .section-icon::before,
++.achievement:hover .achievement-icon::before {
++    opacity: 0.7;
++    animation: iconGlow 1s ease-in-out infinite alternate;
++}
++
++@keyframes iconGlow {
++    0% { transform: scale(1); opacity: 0.7; }
++    100% { transform: scale(1.2); opacity: 0.3; }
++}
++
++/* Gaming Progress Bar */
++.level-progress-bar {
++    background: var(--gradient);
++    position: relative;
++    overflow: hidden;
++}
++
++.level-progress-bar::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    right: 0;
++    bottom: 0;
++    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
++    animation: progressShine 2s ease-in-out infinite;
++}
++
++@keyframes progressShine {
++    0% { transform: translateX(-100%); }
++    100% { transform: translateX(100%); }
++}
++
++/* Gaming Navigation */
++header .main-nav ul li a:hover,
++header .main-nav ul li a.active {
++    background: var(--gradient);
+     color: #fff;
+-    border-color: #ff9966;
++    box-shadow: var(--neon-glow);
++    border-radius: 25px;
++    transform: translateY(-2px);
+ }
+ 
+-/* Section icons and badges with rainbow gradient */
+-.section-icon,
+-.achievement-icon,
+-.level-badge {
++/* Floating Gaming Particles */
++.floating-particle {
++    position: absolute;
++    width: 4px;
++    height: 4px;
+     background: var(--gradient);
+-    box-shadow: 0 0 10px rgba(255, 183, 77, 0.3);
++    border-radius: 50%;
++    animation: floatParticle 8s linear infinite;
++    z-index: -1;
+ }
+ 
+-/* Level progress bar with rainbow */
+-.level-progress-bar {
+-    background: var(--gradient);
++.floating-particle:nth-child(1) { left: 10%; animation-delay: 0s; }
++.floating-particle:nth-child(2) { left: 20%; animation-delay: 1s; }
++.floating-particle:nth-child(3) { left: 30%; animation-delay: 2s; }
++.floating-particle:nth-child(4) { left: 40%; animation-delay: 3s; }
++.floating-particle:nth-child(5) { left: 50%; animation-delay: 4s; }
++.floating-particle:nth-child(6) { left: 60%; animation-delay: 5s; }
++.floating-particle:nth-child(7) { left: 70%; animation-delay: 6s; }
++.floating-particle:nth-child(8) { left: 80%; animation-delay: 7s; }
++.floating-particle:nth-child(9) { left: 90%; animation-delay: 8s; }
++
++@keyframes floatParticle {
++    0% { 
++        transform: translateY(100vh) scale(0);
++        opacity: 0;
++    }
++    10% {
++        opacity: 1;
++        transform: translateY(90vh) scale(1);
++    }
++    90% {
++        opacity: 1;
++        transform: translateY(10vh) scale(1);
++    }
++    100% { 
++        transform: translateY(-10vh) scale(0);
++        opacity: 0;
++    }
+ }
+ 
+-/* Add more color to nav links on hover */
+-header .main-nav ul li a:hover,
+-header .main-nav ul li a.active {
+-    background: linear-gradient(90deg, #ff9966 0%, #43e97b 100%);
+-    color: #fff;
+-    box-shadow: 0 0 10px #ff9966;
++/* Gaming Text Effects */
++.hero-content h1 {
++    background: var(--gradient);
++    -webkit-background-clip: text;
++    background-clip: text;
++    color: transparent;
++    text-shadow: none;
++    position: relative;
++    animation: textGlow 3s ease-in-out infinite alternate;
+ }
+ 
+-/* Add a fun border to cards */
+-.section-button,
+-.challenge-card,
+-.feature {
+-    border: 2px solid #f9d423;
+-    background: #fff;
++@keyframes textGlow {
++    0% { filter: drop-shadow(0 0 5px var(--accent-color-1)); }
++    100% { filter: drop-shadow(0 0 20px var(--accent-color-1)) drop-shadow(0 0 30px var(--accent-color-2)); }
+ }
+ 
+-/* Make floating shapes more colorful */
+-.floating-shape.shape1 { background: #ff9966; }
+-.floating-shape.shape2 { background: #43e97b; }
+-.floating-shape.shape3 { background: #f9d423; }
+-.floating-shape.shape4 { background: #4facfe; }
++.section-title {
++    background: var(--gradient);
++    -webkit-background-clip: text;
++    background-clip: text;
++    color: transparent;
++    position: relative;
++    display: inline-block;
++}
++
++.section-title::after {
++    content: '';
++    position: absolute;
++    bottom: -10px;
++    left: 50%;
++    transform: translateX(-50%);
++    width: 100px;
++    height: 3px;
++    background: var(--gradient);
++    border-radius: 2px;
++    box-shadow: var(--accent-glow);
++}
++
++/* Gaming Hover Effects */
++.section-button:hover,
++.challenge-card:hover,
++.feature:hover {
++    transform: translateY(-10px) scale(1.02);
++    box-shadow: var(--accent-glow), 0 20px 40px rgba(0, 0, 0, 0.3);
++    border-color: var(--accent-color-2);
++}
++
++/* Gaming Achievement Animations */
++.achievement {
++    animation: achievementSlide 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
++    background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.95));
++    border: 1px solid var(--accent-color-1);
++    box-shadow: var(--accent-glow);
++}
++
++@keyframes achievementSlide {
++    0% { 
++        transform: translateX(120%) scale(0.8);
++        opacity: 0;
++    }
++    70% {
++        transform: translateX(-10px) scale(1.05);
++    }
++    100% { 
++        transform: translateX(0) scale(1);
++        opacity: 1;
++    }
++}
++
++/* Gaming Level Indicator */
++.level-indicator {
++    background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.95));
++    border: 2px solid var(--accent-color-1);
++    box-shadow: var(--accent-glow);
++}
++
++.level-badge {
++    animation: levelPulse 2s ease-in-out infinite alternate;
++    box-shadow: var(--neon-glow);
++}
++
++@keyframes levelPulse {
++    0% { 
++        transform: scale(1);
++        box-shadow: var(--neon-glow);
++    }
++    100% { 
++        transform: scale(1.1);
++        box-shadow: var(--neon-glow), 0 0 25px var(--accent-color-1);
++    }
++}

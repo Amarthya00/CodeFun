@@ -1,0 +1,624 @@
+@@ .. @@
+ /* Challenge Header */
+ .challenge-header {
+     padding: 150px 0 50px;
+-    background: linear-gradient(135deg, #111, #222);
++    background: linear-gradient(135deg, #0a0a0f, #1a1a2e);
+     color: white;
+     text-align: center;
++    position: relative;
++    overflow: hidden;
++}
++
++.challenge-header::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    right: 0;
++    bottom: 0;
++    background: 
++        radial-gradient(circle at 30% 20%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
++        radial-gradient(circle at 70% 80%, rgba(0, 255, 128, 0.1) 0%, transparent 50%);
++    animation: headerPulse 6s ease-in-out infinite alternate;
++}
++
++@keyframes headerPulse {
++    0% { opacity: 0.3; }
++    100% { opacity: 0.7; }
+ }
+ 
+ .challenge-header h1 {
+     font-size: 3rem;
+     margin-bottom: 20px;
++    background: linear-gradient(45deg, #ff0080, #00ff80, #8000ff);
++    -webkit-background-clip: text;
++    background-clip: text;
++    color: transparent;
++    text-shadow: 0 0 30px rgba(255, 0, 128, 0.5);
++    animation: titleGlow 3s ease-in-out infinite alternate;
++}
++
++@keyframes titleGlow {
++    0% { filter: drop-shadow(0 0 10px #ff0080); }
++    100% { filter: drop-shadow(0 0 20px #ff0080) drop-shadow(0 0 30px #00ff80); }
+ }
+ 
+ .challenge-meta {
+@@ .. @@
+ .difficulty {
+     padding: 5px 15px;
+     border-radius: 20px;
+     font-size: 0.9rem;
+     font-weight: 600;
++    border: 2px solid;
++    position: relative;
++    overflow: hidden;
++}
++
++.difficulty::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: -100%;
++    width: 100%;
++    height: 100%;
++    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
++    transition: left 0.5s ease;
++}
++
++.difficulty:hover::before {
++    left: 100%;
+ }
+ 
+ .beginner {
+-    background-color: #0a2e4a;
+-    color: #4db8ff;
++    background: linear-gradient(45deg, #00ff80, #00ffff);
++    color: #000;
++    border-color: #00ff80;
++    box-shadow: 0 0 15px rgba(0, 255, 128, 0.5);
+ }
+ 
+ .intermediate {
+-    background-color: #2e2a0a;
+-    color: #ffcc44;
++    background: linear-gradient(45deg, #ffff00, #ff8000);
++    color: #000;
++    border-color: #ffff00;
++    box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+ }
+ 
+ .advanced {
+-    background-color: #2e0a0a;
+-    color: #ff6b6b;
++    background: linear-gradient(45deg, #ff0080, #8000ff);
++    color: #fff;
++    border-color: #ff0080;
++    box-shadow: 0 0 15px rgba(255, 0, 128, 0.5);
+ }
+ 
+ .challenge-description {
+@@ .. @@
+ /* Challenge Content */
+ .challenge-content {
+     padding: 50px 0;
+-    background-color: #000;
++    background: linear-gradient(135deg, #0a0a0f, #1a1a2e);
++    position: relative;
++}
++
++.challenge-content::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    right: 0;
++    bottom: 0;
++    background: 
++        linear-gradient(rgba(255, 0, 128, 0.02) 1px, transparent 1px),
++        linear-gradient(90deg, rgba(255, 0, 128, 0.02) 1px, transparent 1px);
++    background-size: 30px 30px;
++    animation: gridMove 15s linear infinite;
++}
++
++@keyframes gridMove {
++    0% { transform: translate(0, 0); }
++    100% { transform: translate(30px, 30px); }
+ }
+ 
+ /* Challenge Tabs */
+@@ .. @@
+ .tab-button {
+     padding: 12px 25px;
+-    background-color: #222;
+-    border: 2px solid #444;
++    background: linear-gradient(145deg, #1a1a2e, #16213e);
++    border: 2px solid #ff0080;
+     border-radius: 30px;
+     font-weight: 600;
+-    color: #ccc;
++    color: #fff;
+     cursor: pointer;
+     transition: all 0.3s ease;
++    position: relative;
++    overflow: hidden;
++}
++
++.tab-button::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    width: 0;
++    height: 100%;
++    background: linear-gradient(45deg, #ff0080, #00ff80);
++    transition: width 0.3s ease;
++    z-index: -1;
+ }
+ 
+ .tab-button:hover {
+-    border-color: #4776E6;
+-    color: #4776E6;
++    border-color: #00ff80;
++    color: #000;
++    box-shadow: 0 0 20px rgba(0, 255, 128, 0.5);
++    transform: translateY(-2px);
++}
++
++.tab-button:hover::before {
++    width: 100%;
+ }
+ 
+ .tab-button.active {
+-    background-color: #4776E6;
+-    border-color: #4776E6;
+-    color: white;
++    background: linear-gradient(45deg, #ff0080, #00ff80);
++    border-color: #00ff80;
++    color: #000;
++    box-shadow: 0 0 25px rgba(255, 0, 128, 0.6);
++    transform: scale(1.05);
+ }
+ 
+ /* Tab Content */
+@@ .. @@
+ /* Puzzle Description */
+ .puzzle-description {
+-    background-color: #111;
++    background: linear-gradient(145deg, #1a1a2e, #16213e);
+     border-radius: 10px;
+     padding: 30px;
+     margin-bottom: 30px;
+-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
++    box-shadow: 0 8px 32px rgba(255, 0, 128, 0.2);
++    border: 1px solid rgba(255, 0, 128, 0.3);
++    position: relative;
++    overflow: hidden;
++}
++
++.puzzle-description::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    right: 0;
++    bottom: 0;
++    background: linear-gradient(45deg, rgba(255, 0, 128, 0.05), rgba(0, 255, 128, 0.05));
++    z-index: -1;
+ }
+ 
+ .puzzle-description h2 {
+@@ .. @@
+ .instructions, .hints {
+     margin-top: 20px;
+     padding: 20px;
+     border-radius: 8px;
++    position: relative;
++    overflow: hidden;
++}
++
++.instructions::before, .hints::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    width: 4px;
++    height: 100%;
++    background: linear-gradient(180deg, #ff0080, #00ff80);
++    animation: borderGlow 2s ease-in-out infinite alternate;
++}
++
++@keyframes borderGlow {
++    0% { box-shadow: 0 0 5px #ff0080; }
++    100% { box-shadow: 0 0 15px #ff0080, 0 0 25px #00ff80; }
+ }
+ 
+ .instructions {
+-    background-color: #1a1a2e;
+-    border-left: 4px solid #4776E6;
++    background: linear-gradient(145deg, #1a1a2e, #16213e);
++    border: 1px solid rgba(0, 255, 128, 0.3);
+ }
+ 
+ .hints {
+-    background-color: #2a1a0a;
+-    border-left: 4px solid #ffaa00;
++    background: linear-gradient(145deg, #2e1a2e, #2e1a16);
++    border: 1px solid rgba(255, 255, 0, 0.3);
+ }
+ 
+ .instructions h3, .hints h3 {
+@@ .. @@
+ code {
+-    background-color: #333;
++    background: linear-gradient(45deg, #2a2a3e, #3a3a4e);
+     padding: 2px 6px;
+     border-radius: 4px;
+     font-family: monospace;
+     font-size: 0.9em;
+-    color: #ff69b4;
++    color: #00ff80;
++    border: 1px solid rgba(0, 255, 128, 0.3);
++    box-shadow: 0 0 10px rgba(0, 255, 128, 0.2);
+ }
+ 
+ /* Code Editor */
+ .code-editor {
+-    background-color: #111;
++    background: linear-gradient(145deg, #1a1a2e, #16213e);
+     border-radius: 10px;
+     overflow: hidden;
+-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
++    box-shadow: 0 8px 32px rgba(255, 0, 128, 0.3);
+     margin-bottom: 30px;
++    border: 2px solid rgba(255, 0, 128, 0.3);
++    position: relative;
++}
++
++.code-editor::before {
++    content: '';
++    position: absolute;
++    top: -2px;
++    left: -2px;
++    right: -2px;
++    bottom: -2px;
++    background: linear-gradient(45deg, #ff0080, #00ff80, #8000ff, #ff8000);
++    border-radius: 10px;
++    z-index: -1;
++    opacity: 0;
++    transition: opacity 0.3s ease;
++}
++
++.code-editor:hover::before {
++    opacity: 1;
++    animation: borderRotate 3s linear infinite;
++}
++
++@keyframes borderRotate {
++    0% { transform: rotate(0deg); }
++    100% { transform: rotate(360deg); }
+ }
+ 
+ .editor-header {
+@@ .. @@
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px 20px;
+-    background-color: #2d2d2d;
++    background: linear-gradient(90deg, #2a2a3e, #3a3a4e);
+     color: white;
++    border-bottom: 1px solid rgba(255, 0, 128, 0.3);
+ }
+ 
+ .editor-actions {
+@@ .. @@
+ .editor-actions button {
+     padding: 8px 15px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     font-weight: 500;
+     display: flex;
+     align-items: center;
+     gap: 5px;
+     transition: all 0.2s ease;
++    text-transform: uppercase;
++    letter-spacing: 1px;
++    position: relative;
++    overflow: hidden;
++}
++
++.editor-actions button::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: -100%;
++    width: 100%;
++    height: 100%;
++    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
++    transition: left 0.3s ease;
++}
++
++.editor-actions button:hover::before {
++    left: 100%;
+ }
+ 
+ .reset-code {
+-    background-color: #6c757d;
++    background: linear-gradient(45deg, #ff8000, #ffff00);
++    color: #000;
++    border: 1px solid #ff8000;
++    box-shadow: 0 0 10px rgba(255, 128, 0, 0.3);
++}
++
++.reset-code:hover {
++    box-shadow: 0 0 20px rgba(255, 128, 0, 0.6);
++    transform: translateY(-2px);
++}
++
++.run-code {
++    background: linear-gradient(45deg, #00ff80, #00ffff);
++    color: #000;
++    border: 1px solid #00ff80;
++    box-shadow: 0 0 10px rgba(0, 255, 128, 0.3);
++}
++
++.run-code:hover {
++    box-shadow: 0 0 20px rgba(0, 255, 128, 0.6);
++    transform: translateY(-2px);
++}
++
++.reset-code {
++    background-color: #6c757d;
+     color: white;
+ }
+ 
+ .reset-code:hover {
+     background-color: #5a6268;
+ }
+ 
+ .run-code {
+     background-color: #28a745;
+     color: white;
+ }
+ 
+ .run-code:hover {
+     background-color: #218838;
+ }
+ 
+ .editor-container {
+@@ .. @@
+ .code-input {
+     width: 100%;
+     height: 100%;
+     padding: 15px;
+     font-family: monospace;
+     font-size: 14px;
+     line-height: 1.5;
+-    color: #fff;
++    color: #00ff80;
+     border: none;
+     resize: none;
+-    background-color: #1e1e1e;
++    background: linear-gradient(145deg, #0f0f1a, #1a1a2e);
++    caret-color: #00ff80;
+ }
+ 
+ .code-input:focus {
+     outline: none;
++    box-shadow: inset 0 0 20px rgba(0, 255, 128, 0.1);
+ }
+ 
+ .output-container {
+-    border-top: 1px solid #333;
++    border-top: 1px solid rgba(255, 0, 128, 0.3);
+ }
+ 
+ .output-header {
+@@ .. @@
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px 20px;
+-    background-color: #222;
++    background: linear-gradient(90deg, #2a2a3e, #3a3a4e);
+ }
+ 
+ .clear-output {
+@@ .. @@
+ .output-display {
+     padding: 15px;
+     min-height: 100px;
+     max-height: 200px;
+     overflow-y: auto;
+     font-family: monospace;
+     white-space: pre-wrap;
+-    color: #fff;
+-    background-color: #1e1e1e;
++    color: #00ff80;
++    background: linear-gradient(145deg, #0f0f1a, #1a1a2e);
+ }
+ 
+ .output-display.error {
+-    color: #dc3545;
++    color: #ff0080;
++    text-shadow: 0 0 10px rgba(255, 0, 128, 0.5);
+ }
+ 
+ /* Test Results */
+ .test-results {
+-    border-top: 1px solid #333;
++    border-top: 1px solid rgba(255, 0, 128, 0.3);
+ }
+ 
+ .test-header {
+     padding: 10px 20px;
+-    background-color: #222;
++    background: linear-gradient(90deg, #2a2a3e, #3a3a4e);
+     color: #fff;
+ }
+ 
+ .test-output {
+     padding: 15px;
+     min-height: 50px;
+     max-height: 150px;
+     overflow-y: auto;
+     font-family: monospace;
+     white-space: pre-wrap;
+-    background-color: #1e1e1e;
+-    color: #fff;
++    background: linear-gradient(145deg, #0f0f1a, #1a1a2e);
++    color: #00ff80;
+ }
+ 
+ .test-case {
+     margin-bottom: 10px;
+     padding: 10px;
+     border-radius: 4px;
++    border: 1px solid;
++    position: relative;
++    overflow: hidden;
++}
++
++.test-case::before {
++    content: '';
++    position: absolute;
++    top: 0;
++    left: 0;
++    width: 4px;
++    height: 100%;
++    animation: testGlow 2s ease-in-out infinite alternate;
+ }
+ 
+ .test-pass {
+-    background-color: #0a2e0a;
+-    color: #6dff72;
+-    border-left: 4px solid #28a745;
++    background: linear-gradient(145deg, #0a2e0a, #0f3f0f);
++    color: #00ff80;
++    border-color: #00ff80;
++    box-shadow: 0 0 15px rgba(0, 255, 128, 0.2);
++}
++
++.test-pass::before {
++    background: #00ff80;
++}
++
++@keyframes testGlow {
++    0% { box-shadow: 0 0 5px #00ff80; }
++    100% { box-shadow: 0 0 15px #00ff80; }
+ }
+ 
+ .test-fail {
+-    background-color: #2e0a0a;
+-    color: #ff6b6b;
+-    border-left: 4px solid #dc3545;
++    background: linear-gradient(145deg, #2e0a0a, #3f0f0f);
++    color: #ff0080;
++    border-color: #ff0080;
++    box-shadow: 0 0 15px rgba(255, 0, 128, 0.2);
++}
++
++.test-fail::before {
++    background: #ff0080;
++    animation: testFailGlow 2s ease-in-out infinite alternate;
++}
++
++@keyframes testFailGlow {
++    0% { box-shadow: 0 0 5px #ff0080; }
++    100% { box-shadow: 0 0 15px #ff0080; }
+ }
+ 
+ /* Challenge Navigation */
+ .challenge-navigation {
+     padding: 50px 0;
+-    background-color: #111;
++    background: linear-gradient(135deg, #0a0a0f, #1a1a2e);
+ }
+ 
+ .nav-buttons {
+@@ .. @@
+ /* Completed Badge */
+ .completed-badge {
+     position: absolute;
+     top: 20px;
+     right: 20px;
+-    background-color: #28a745;
+-    color: white;
++    background: linear-gradient(45deg, #00ff80, #00ffff);
++    color: #000;
+     padding: 5px 10px;
+     border-radius: 20px;
+     font-size: 0.8rem;
+     font-weight: 600;
+     display: flex;
+     align-items: center;
+     gap: 5px;
++    border: 1px solid #00ff80;
++    box-shadow: 0 0 15px rgba(0, 255, 128, 0.5);
++    animation: badgePulse 2s ease-in-out infinite alternate;
++}
++
++@keyframes badgePulse {
++    0% { transform: scale(1); }
++    100% { transform: scale(1.05); box-shadow: 0 0 25px rgba(0, 255, 128, 0.7); }
+ }
+ 
+ /* Congratulations Modal */
+@@ .. @@
+ .congrats-content {
+-    background-color: #111;
++    background: linear-gradient(145deg, #1a1a2e, #16213e);
+     border-radius: 10px;
+     padding: 40px;
+     text-align: center;
+     max-width: 500px;
+     width: 90%;
+     transform: translateY(20px);
+     transition: transform 0.3s ease;
+-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
++    box-shadow: 0 20px 60px rgba(255, 0, 128, 0.4);
++    border: 2px solid rgba(255, 0, 128, 0.5);
++    position: relative;
++    overflow: hidden;
++}
++
++.congrats-content::before {
++    content: '';
++    position: absolute;
++    top: -2px;
++    left: -2px;
++    right: -2px;
++    bottom: -2px;
++    background: linear-gradient(45deg, #ff0080, #00ff80, #8000ff, #ff8000);
++    border-radius: 10px;
++    z-index: -1;
++    animation: borderRotate 3s linear infinite;
++}
++
++.congrats-content::after {
++    content: '🎉';
++    position: absolute;
++    top: -20px;
++    left: 50%;
++    transform: translateX(-50%);
++    font-size: 3rem;
++    animation: celebrationBounce 1s ease-in-out infinite alternate;
++}
++
++@keyframes celebrationBounce {
++    0% { transform: translateX(-50%) translateY(0) scale(1); }
++    100% { transform: translateX(-50%) translateY(-10px) scale(1.2); }
+ }
+ 
+ .congrats-modal.show .congrats-content {
+@@ .. @@
+ .points {
+     font-weight: 700;
+-    color: #4776E6;
++    color: #00ff80;
++    text-shadow: 0 0 10px rgba(0, 255, 128, 0.8);
++    font-size: 1.2em;
+ }
+ 
+ .close-modal {
